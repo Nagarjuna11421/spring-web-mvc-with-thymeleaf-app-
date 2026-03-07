@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="ISO-8859-1"> 	
+		<title>Page</title>
+		<style>
+			body{
+				background-color: whitesmoke;
+			}
+			div{
+				width: 600px;
+				margin: 80px auto;
+				padding: 10px;
+				background-color: azure;
+				border-radius: 15px;
+				box-shadow: 10px ;
+				
+			}
+			h1{
+				color: blue;
+				background-color: azure;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<h1 th:text=${message}></h1>
+			<a href="/">Add Product</a>
+		</div>
+	</body>
+</html>

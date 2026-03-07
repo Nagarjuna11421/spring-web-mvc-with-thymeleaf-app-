@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Page</title>
+	<style>
+		body {
+			background-color: azure;
+		}
+		div{
+			width: 600px;
+			margin:60px auto;
+			border: 0.5px solid aliceblue;
+			background-color: aliceblue;
+			border-radius: 20px;
+			padding: 20px;
+		}
+		#btn{
+			width: 70px ;
+			height:30px;
+			align-items: center;
+			margin-left: 5px;
+			border: none;
+			border-radius: 5px;
+		}
+		#btn:hover{
+					width: 70px ;
+					height:30px;
+					align-items: center;
+					margin-left: 5px;
+					border: none;
+					border-radius: 5px;
+					color: white;
+					background-color: blue;
+					font-size: large;
+				}
+			h3{
+				color:forestgreen;
+				font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+				font-size: large;
+			}
+	</style>
+</head>
+
+<body>
+	<div>
+		<h3 th:text="${message}" style="margin-left:10px;"></h3>
+		
+		<form th:action="@{/save}" th:object="${product}" method="post">
+			<table>
+				<tr>
+					<td><label>Product Id:</label></td>
+					<td><input type="text" th:field="*{pid}"/></td>
+					<td th:if="${#fields.hasErrors('pid')}" th:errors="*{pid}"></td>
+				</tr>
+				<tr>
+					<td><label>Product Name:</label></td>
+					<td><input type="text" th:field="*{productName}" /></td>
+					<td th:if="${#fields.hasErrors('productName')}" th:errors="*{productName}"></td>
+				</tr>
+				<tr>
+					<td><label>Price:</label></td>
+					<td><input type="text" th:field="*{price}"/></td>
+					<td th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></td>
+				</tr>
+				<tr>
+					<td><input id="btn" type="submit" value="Save" href="display"/></td>
+					
+				</tr>
+			</table>
+
+		</form>
+	</div>
+</body>
+
+</html>
