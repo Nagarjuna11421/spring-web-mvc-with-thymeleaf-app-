@@ -28,11 +28,18 @@ public class MessageController {
 		return "display";
 	}
 	
-	@GetMapping("/welcom")
+	@GetMapping("/wel")
 	@ResponseBody
 	public String getMessage() {
 		
 		return "Welcome to AshokIT - AND - welcome to Spring Web MVC";
+	}
+	
+	@GetMapping("/gree")
+	@ResponseBody
+	public String getGreet() {
+		
+		return "Good morning Nagarjuna.";
 	}
 
 }
